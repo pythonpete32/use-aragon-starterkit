@@ -5,6 +5,7 @@ import NextHead from "next/head";
 import * as React from "react";
 import { WagmiConfig } from "wagmi";
 import { chains, client } from "../wagmi";
+import { ColorModeScript } from "@chakra-ui/react";
 
 import { ChakraProvider } from "@chakra-ui/react";
 import "@fontsource/inter/variable.css";
@@ -20,6 +21,8 @@ function App({ Component, pageProps }: AppProps) {
       <RainbowKitProvider chains={chains} theme={darkTheme()}>
         <AragonProvider>
           <ChakraProvider theme={theme}>
+            <ColorModeScript initialColorMode="dark" />
+
             <NextHead>
               <title>My wagmi + RainbowKit App</title>
             </NextHead>
